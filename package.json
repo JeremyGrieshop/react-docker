@@ -1,19 +1,20 @@
 {
-  "name": "docker",
-  "version": "1.0.0",
-  "description": "Client APIs for Docker",
+  "name": "@memsetzero/react-docker",
+  "version": "0.1.0",
+  "description": "Client APIs and React hooks for Docker",
   "author": "jeremygrieshop",
   "license": "MIT",
-  "repository": "jeremygrieshop/docker",
+  "repository": "jeremygrieshop/react-docker",
   "main": "dist/index.js",
-  "module": "dist/index.modern.js",
+  "module": "dist/index.es.js",
+  "esmodule": "dist/index.modern.js",
   "source": "src/index.js",
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "build": "microbundle-crl --no-compress --format modern,cjs",
-    "start": "microbundle-crl watch --no-compress --format modern,cjs",
+    "build": "microbundle-crl",
+    "start": "microbundle-crl watch",
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
@@ -24,7 +25,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0"
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "microbundle-crl": "^0.13.10",
